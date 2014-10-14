@@ -542,6 +542,11 @@ public class IdCardUtils extends StringUtils {
      */
     public static String getGenderByIdCard(String idCard) {
         String sGender = "N";
+        
+        if(idCard == null)
+        	return sGender;
+        idCard = idCard.trim();
+        
         if (idCard.length() == CHINA_ID_MIN_LENGTH) {
             idCard = conver15CardTo18(idCard);
         }
